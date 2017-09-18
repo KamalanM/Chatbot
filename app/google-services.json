@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "203406551018",
+    "firebase_url": "https://chatbot-57274.firebaseio.com",
+    "project_id": "chatbot-57274",
+    "storage_bucket": "chatbot-57274.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:203406551018:android:60f4a65efd9ba2b5",
+        "android_client_info": {
+          "package_name": "com.example.priya.chatbot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "203406551018-en3qsh1rjuobg66vkk2kir8a0afp4lm7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.priya.chatbot",
+            "certificate_hash": "c2d3d42d278b7481086f54ac5d066979fd1301be"
+          }
+        },
+        {
+          "client_id": "203406551018-t6vit3m2mdkf2966gc3ikvo71sop79dr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0oC0UN6VOeKxr8ngV34akoOJzEXZyjBE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "203406551018-t6vit3m2mdkf2966gc3ikvo71sop79dr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

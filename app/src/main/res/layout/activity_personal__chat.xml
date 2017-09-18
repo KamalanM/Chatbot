@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.priya.chatbot.Personal_Chat">
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="382dp"
+        android:layout_height="31dp"
+
+        android:fontFamily="sans-serif-smallcaps"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="285dp"
+        android:layout_height="51dp"
+        android:hint="Type your message"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/scroll"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:id="@+id/send"
+        android:foreground="@drawable/ic_send"
+        android:background="@color/white"
+        android:layout_alignBottom="@+id/editText"
+        android:layout_toEndOf="@+id/editText"
+        android:layout_marginStart="12dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scroll"
+        android:layout_above="@+id/editText"
+        android:layout_below="@+id/username">
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recycler_view"
+        android:layout_below="@+id/username"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/editText">
+
+    </android.support.v7.widget.RecyclerView>
+    </ScrollView>
+
+</RelativeLayout>
