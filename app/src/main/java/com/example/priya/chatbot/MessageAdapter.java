@@ -3,13 +3,13 @@ package com.example.priya.chatbot;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,15 +27,18 @@ public class MessageAdapter  extends RecyclerView.Adapter<MessageAdapter.MyViewH
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView text_left,text_right;
+        public TextView text_left,text_right,name_left,name_right;
+        public RelativeLayout RL_left,RL_right;
 
 
         public MyViewHolder(View view) {
             super(view);
             text_left= (TextView) view.findViewById(R.id.text_left);
             text_right= (TextView) view.findViewById(R.id.text_right);
-
-
+            name_left= (TextView) view.findViewById(R.id.name_left);
+            name_right= (TextView) view.findViewById(R.id.name_right);
+            RL_left=(RelativeLayout)view.findViewById(R.id.user_one);
+            RL_right=(RelativeLayout)view.findViewById(R.id.user_two);
 
         }
     }
@@ -57,20 +60,24 @@ public class MessageAdapter  extends RecyclerView.Adapter<MessageAdapter.MyViewH
         Messages messages = messagesList.get(position);
         String cur_user=messages.getCur_user();
         String author=messages.getAuthor();
-        LinearLayout.LayoutParams layoutParams=new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        //LinearLayout.LayoutParams layoutParams=new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
         if(cur_user.equals(author)){
 
 
-            holder.text_right.setGravity(Gravity.RIGHT);
-          //  layoutParams.gravity=Gravity.RIGHT;
-            holder.text_right.setBackgroundColor(Color.parseColor("#40c272"));
+//            holder.text_right.setGravity(Gravity.RIGHT);
+//            layoutParams.gravity=Gravity.RIGHT;
+//            holder.text_right.setBackgroundColor(Color.parseColor("#40c272"));
+            holder.RL_left.setVisibility(View.GONE);
+            holder.name_right.setText(cur_user);
             holder.text_right.setText(messages.getMessage());
 
         }
         else {
-            holder.text_left.setBackgroundColor(Color.parseColor("#51b9d1"));
-            //layoutParams.gravity=Gravity.LEFT;
-            holder.text_left.setGravity(Gravity.LEFT);
+//            holder.text_left.setBackgroundColor(Color.parseColor("#51b9d1"));
+//            layoutParams.gravity=Gravity.LEFT;
+//            holder.text_left.setGravity(Gravity.LEFT);
+            holder.RL_right.setVisibility(View.GONE);
+            holder.name_left.setText(messages.getAuthor());
             holder.text_left.setText(messages.getMessage());
 
         }

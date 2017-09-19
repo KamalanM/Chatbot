@@ -43,8 +43,6 @@ public class Chat extends AppCompatActivity {
         mAdapter = new UserAdapter(userList);
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         //=====================
-//        mLayoutManager.setReverseLayout(true);
-//        mLayoutManager.setStackFromEnd(true);
 
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());

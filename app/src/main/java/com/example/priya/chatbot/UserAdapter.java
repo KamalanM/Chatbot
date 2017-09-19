@@ -33,7 +33,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
                     Intent i = new Intent(v.getContext(), Personal_Chat.class);
                     i.putExtra("User", user);
                     v.getContext().startActivity(i);
-                    Toast.makeText(v.getContext(),"Don't Touch Again  -_-"+user,Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(v.getContext(),"Don't Touch Again  -_-"+user,Toast.LENGTH_SHORT).show();
 
 
 
