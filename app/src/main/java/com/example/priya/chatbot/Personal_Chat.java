@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
@@ -36,7 +37,6 @@ public class Personal_Chat extends AppCompatActivity {
     EditText editText;
     Button send;
     RecyclerView recyclerView;
-    ScrollView scrollView;
 
     FirebaseDatabase db=FirebaseDatabase.getInstance();
     DatabaseReference myref,myref2,myref1;
@@ -49,7 +49,7 @@ public class Personal_Chat extends AppCompatActivity {
     DatabaseReference myRef = database.getReference();
 
 
-    private List<Messages> messagesList = new ArrayList<>();
+    private static List<Messages> messagesList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,11 +70,11 @@ public class Personal_Chat extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("User_details", MODE_PRIVATE);
         cur_user= prefs.getString("username", "Not Registered");
 
-        mAdapter = new MessageAdapter(messagesList);
+        mAdapter = new MessageAdapter();
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         //=====================
-        //mLayoutManager.setReverseLayout(true);
-        //mLayoutManager.setStackFromEnd(true);
+//        mLayoutManager.setReverseLayout(true);
+//        mLayoutManager.setStackFromEnd(true);
 
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -83,18 +83,24 @@ public class Personal_Chat extends AppCompatActivity {
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Messages messages=new Messages("","","");
+                //Messages messages=new Messages("","","");
 
 
                 for (DataSnapshot snapshot:dataSnapshot.child("message").child(cur_user+"-"+nameuser).getChildren()) {
 
                     String name = snapshot.child("author").getValue().toString();
                     String text = snapshot.child("text").getValue().toString();
-                    messages = new Messages(text,name,cur_user);
-                    messagesList.add(messages);
-                    recyclerView.setAdapter(mAdapter);
+
+                    MessageAdapter.messagesList.add(text);
+                    MessageAdapter.authorlist.add(name);
+                    MessageAdapter.cur_userlist.add(cur_user);
+
+//                    messages = new Messages(text,name,cur_user);
+//                    messagesList.add(messages);
+                    mAdapter.notifyDataSetChanged();
                 }
-                //recyclerView.scrollToPosition(mAdapter.getItemCount() - 1);
+
+                recyclerView.scrollToPosition(mAdapter.getItemCount() - 1);
 
 
             }
@@ -104,8 +110,7 @@ public class Personal_Chat extends AppCompatActivity {
 
             }
         });
-
-        //mAdapter.notifyDataSetChanged();
+        recyclerView.setAdapter(mAdapter);
 
 
         send.setOnClickListener(new View.OnClickListener() {

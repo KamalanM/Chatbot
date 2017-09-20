@@ -14,18 +14,16 @@
 
         <TextView
             android:id="@+id/name_left"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:padding="3dp"
-            android:background="@color/inspire_blue"
-            />
+            android:textColor="@color/inspire_blue"            />
 
 
         <TextView
             android:id="@+id/text_left"
-            android:background="@color/inspire_blue"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/name_left"
             android:layout_alignParentStart="true"
@@ -35,37 +33,36 @@
     </RelativeLayout>
 
 
-    <RelativeLayout
-        android:id="@+id/user_two"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-       >
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/user_two"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:padding="10dp"-->
+       <!--&gt;-->
 
-        <TextView
-            android:id="@+id/name_right"
-            android:background="@color/inspire_green"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/text_right"
-            android:padding="3dp"
-            android:textAlignment="viewEnd"
-            />
+        <!--<TextView-->
+            <!--android:id="@+id/name_right"-->
+            <!--android:textColor="@color/inspire_green"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_alignStart="@+id/text_right"-->
+            <!--android:padding="3dp"-->
+            <!--android:textAlignment="viewEnd"-->
+            <!--/>-->
 
 
-        <TextView
-            android:id="@+id/text_right"
-            android:background="@color/inspire_green"
-            android:textAlignment="viewEnd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/name_right"
-            android:layout_alignParentEnd="true"
-            android:padding="3dp"
-            />
+        <!--<TextView-->
+            <!--android:id="@+id/text_right"-->
+            <!--android:textAlignment="viewEnd"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/name_right"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:padding="3dp"-->
+            <!--/>-->
 
-    </RelativeLayout>
+    <!--</RelativeLayout>-->
 
 
 </LinearLayout>
