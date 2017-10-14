@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Chatbot</string>
+
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Hello!! </string>
+    <string name="slide_1_desc">Welcome to chatbot!!</string>
+
+    <string name="slide_2_title">Registeration</string>
+    <string name="slide_2_desc">Register with your mobile number and get verified by OTP!!</string>
+
+    <string name="slide_3_title">Login</string>
+    <string name="slide_3_desc">Now login to see your friends and chat with them!!!</string>
+
+    <string name="slide_4_title">Congratulations</string>
+    <string name="slide_4_desc">We hope you enjoy Chatapp and have fun!!</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
 </resources>

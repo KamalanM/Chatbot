@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".WelcomeActivity">
+            android:theme="@style/AppTheme.NoTitleBar.FullScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,7 +24,8 @@
         </activity>
         <activity android:name=".Sign_in" />
         <activity android:name=".Chat" />
-        <activity android:name=".Personal_Chat"></activity>
+        <activity android:name=".Personal_Chat" />
+        <activity android:name=".MainActivity"> </activity>
     </application>
 
 </manifest>
